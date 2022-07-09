@@ -81,18 +81,23 @@ export default function CaseStudy() {
                         </div>
 
                         <div>
-                            <label>Name</label>
-                            <h6>content</h6>
+                            <label>db</label>
+                            <h6>{currentImage.db}</h6>
                         </div>
 
                         <div>
-                            <label>Name</label>
-                            <h6>content</h6>
+                            <label>sex</label>
+                            <h6>{currentImage.sex}</h6>
                         </div>
 
                         <div>
-                            <label>Name</label>
-                            <h6>content</h6>
+                            <label>adresse</label>
+                            <h6>{currentImage.adresse}</h6>
+                        </div>
+
+                        <div>
+                            <label>licenseno</label>
+                            <h6>{currentImage.licenseno}</h6>
                         </div>
                     </div>
                     
