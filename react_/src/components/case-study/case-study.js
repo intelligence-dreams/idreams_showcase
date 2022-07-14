@@ -21,6 +21,7 @@ export default function CaseStudy() {
     useEffect(()=>{
         //setDisplaycases(columns);
         axios.get("/").then(r=>setDisplaycases(r.data));
+        
     },[])
 
     const change_image_state = (path,pothole)=>{
@@ -44,7 +45,7 @@ export default function CaseStudy() {
     displaycases.map(r=>console.log(r.url));
   return (
     <div>
-        <div className='display-6 font-weight-bold  text-center'>Driver's License Verification with AI Based OCR</div>
+        <h2 className='display-6 font-weight-bold  text-center'>Driver's License Verification with AI Based OCR</h2>
         <div className='cases-container'>
             <div className='cases-sub-container'>
                     <div className='cases-sub-container-buttons'>
