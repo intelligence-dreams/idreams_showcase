@@ -59,6 +59,7 @@
     background-color: transparent;
     border: none;
     color: white;
+    cursor: pointer;
 }
 
 .cases-sub-container:nth-child(2) > .cases-sub-container:nth-of-type(1) > button:focus{

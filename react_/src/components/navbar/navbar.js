@@ -6,6 +6,8 @@ export default function Navbar(){
     const to_products = ()=>navigate("/products");
     const to_home = ()=>navigate('/');
     const to_CaseStudy = ()=>navigate("/case-study/driver-license-verification")
+    const to_maps = ()=>navigate('/maps');
+
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom border-1 shadow" style={{width:"100vw"}}>
             <div className="collapse navbar-collapse" style={{width:"75vw"}}>
@@ -37,7 +39,9 @@ export default function Navbar(){
                                 </div>
                             </div> 
                         </li>
-                        <li className="nav-item"><a href="#" className="nav-link"><small className=" font-weight-bold text-sm">PARTNERSHIPS</small></a> </li>
+                        
+
+                        <li className="nav-item"><a href="#" className="nav-link" onClick={to_maps}><small className=" font-weight-bold text-sm">MAPS</small></a> </li>
                         {/* <li className="nav-item">
                                 <div className="dropdown">
                                     <button className="nav-link bg-white border border-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><small className="font-weight-bold text-sm">RESOURCES</small></button>
