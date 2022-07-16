@@ -7,6 +7,7 @@ export default function Navbar(){
     const to_home = ()=>navigate('/');
     const to_CaseStudy = ()=>navigate("/case-study/driver-license-verification")
     const to_maps = ()=>navigate('/maps');
+    const to_potholes=()=>navigate("/potholes");
 
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom border-1 shadow" style={{width:"100vw"}}>
@@ -22,18 +23,18 @@ export default function Navbar(){
                                 <div className="dropdown">
                                     <button type="button" className="nav-link bg-white border border-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><small className="font-weight-bold text-sm">USE CASSES</small></button> 
                                     <div className="dropdown-menu">
-                                        <button className="dropdown-item" type="button" onClick={to_products}>Action</button>
-                                        <button className="dropdown-item" type="button">Another action</button>
-                                        <button className="dropdown-item" type="button">Something else here</button>
+                                        <button className="dropdown-item" type="button"  onClick={to_CaseStudy}>Driver License OCR</button>
+                                        <button className="dropdown-item" type="button" onClick={to_potholes}>Potholes</button>
+                                        <button className="dropdown-item" type="button" onClick={to_products}>Commercial insurance boot</button>
                                     </div>
                                 </div>
                         </li>
                         <li className="nav-item">
                         
                             <div className="dropdown">
-                                <button type="button" className="nav-link bg-white border border-0  font-weight-bold text-sm " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><small className=" font-weight-bold text-sm display">SOLUTIONS</small></button>
+                                <button type="button" className="nav-link bg-white border border-0  font-weight-bold text-sm " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><small className=" font-weight-bold text-sm display">About</small></button>
                                 <div className="dropdown-menu">
-                                        <button className="dropdown-item" type="button" onClick={to_CaseStudy}>Action</button>
+                                        <button className="dropdown-item" type="button">Action</button>
                                         <button className="dropdown-item" type="button">Another action</button>
                                         <button className="dropdown-item" type="button">Something else here</button>
                                 </div>
@@ -41,7 +42,7 @@ export default function Navbar(){
                         </li>
                         
 
-                        <li className="nav-item"><a href="#" className="nav-link" onClick={to_maps}><small className=" font-weight-bold text-sm">MAPS</small></a> </li>
+                        <li className="nav-item"><a href="#" className="nav-link" onClick={to_maps}><small className=" font-weight-bold text-sm">Contact us</small></a> </li>
                         {/* <li className="nav-item">
                                 <div className="dropdown">
                                     <button className="nav-link bg-white border border-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><small className="font-weight-bold text-sm">RESOURCES</small></button>
