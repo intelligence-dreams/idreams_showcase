@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Map ,GoogleApiWrapper, Marker} from "google-maps-react";
+import { Map ,GoogleApiWrapper, Marker, Popup, Circle} from "google-maps-react";
 import { Component, createRef, useState } from "react";
 import styled from "styled-components";
 import countryList from "./countries";
@@ -21,15 +21,15 @@ const PotholeCard = styled.div`
     height:100vh;
     background-color:white;
     display:grid;
-    grid-template-rows:10vh 60vh;
+    grid-template-rows:5vh 92vh;
     z-index:99;
 
 `;
 
 const PotholeHeader = styled.div`
     background-color:#ddd;
-    display:grid;
-    grid-template-columns:28vw 10vw;
+    display:flex;
+    justify-content:flex-end;
     width:35vw;
     align-items:baseline;
     padding:1%;
@@ -41,10 +41,8 @@ const PotholeContent = styled.div`
     width:35vw;
 `;
 
-const PotholeHeaderTitle = styled.h3`
-    display:flex;
-    justify-content:center; 
-`;
+
+
 
 const PotholeHeaderExit = styled.button`
     background-color:transparent;
@@ -56,10 +54,23 @@ const PotholeHeaderExit = styled.button`
 `;
 
 const PotholeContentImage = styled.img`
-    width:33vw;
-    height:30vh;
+    width:35vw;
+    height:40vh;
 `;
 
+const PotholeContentDetails = styled.div`
+    width:35vw;
+`;
+
+const PotholeDetailTitle = styled.h4`
+    display:flex;
+    justify-content:flex-start;
+    margin:0 15%; 
+`;
+
+const PotholeContentDetailsContent = styled.h6`
+    padding:5%;
+`;
 
 axios.defaults.baseURL = "http://127.0.0.1:8000";
  class PotholesContainer extends Component{
@@ -71,6 +82,8 @@ axios.defaults.baseURL = "http://127.0.0.1:8000";
             potholes:[],
             displayPothole:{},
         }
+        jQuery("#card").hide();
+
     }
       
 
@@ -84,6 +97,8 @@ axios.defaults.baseURL = "http://127.0.0.1:8000";
  
     componentDidMount(){
         this.loadData();
+        jQuery("#card").hide();
+
     }
 
     getPosition(e,lat,lng,pothole){
@@ -116,17 +131,30 @@ axios.defaults.baseURL = "http://127.0.0.1:8000";
                 name={'Current location'}
                 onClick={(e)=>this.getPosition(e,po.latitude,po.longitude,po)}
                 position={{lat:po.latitude,lng:po.longitude}}
-            ></Marker>)}
+                icon={{
+                    scaledSize:new window.google.maps.Size(40,40),
+                    url:"./images/pothole_1.png"
+                }}
+            >
+            <Circle
+                
+            ></Circle>
+
+            </Marker>)}
                                          
             </Map>
 
                 <PotholeCard id="card">
                     <PotholeHeader>
-                        <PotholeHeaderTitle>{this.state.displayPothole.city}--{this.state.displayPothole.country} </PotholeHeaderTitle>
                         <PotholeHeaderExit onClick={this.closeCardPothole}>X</PotholeHeaderExit>
                     </PotholeHeader>
                     <PotholeContent>
                         <PotholeContentImage src={`${this.state.displayPothole.picture}`}></PotholeContentImage>
+                        <PotholeContentDetails>
+                            <PotholeDetailTitle>city/country:{this.state.displayPothole.city}/{this.state.displayPothole.country} </PotholeDetailTitle>
+                            <PotholeContentDetailsContent>latitude/longitude:{this.state.displayPothole.latitude}/{this.state.displayPothole.longitude} </PotholeContentDetailsContent>
+                            <PotholeContentDetailsContent>road:{this.state.displayPothole.road} </PotholeContentDetailsContent>
+                        </PotholeContentDetails>
                     </PotholeContent>
 
                 </PotholeCard>

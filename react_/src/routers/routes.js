@@ -7,6 +7,7 @@ import Products from '../components/products/products'
 import { Potholes } from '../potholes/components/potholes/potholes'
 import GoogleApiWrapper from "../potholes/components/potholes/potholes";
 import { DisplayPotholeInMap } from '../potholes/components/potholes/displaypotholeinmap'
+import { PotholesStatistique } from '../potholes/components/potholes/potholes_statistuque'
 
 
 export default function Routes_(){
@@ -18,7 +19,9 @@ export default function Routes_(){
             <Route path='/case-study/driver-license-verification' element={<CaseStudy />} exact></Route>
             <Route path='/maps' element={<Displaygooglemaps />} exact></Route>
             <Route path='/potholes' element={<DisplayPotholeInMap />}></Route>
+            <Route path='/potholes/statistique' element={<PotholesStatistique />}></Route>
         </Routes>
+        
     </div>
   )
 }
