@@ -10,8 +10,8 @@ function App() {
       <div className="App">
         <Navbar />
       </div>
-      <div className=' app_bg'>
-        <div className='mt-3 ml-2' >
+      <div className=' '>
+        <div className='' >
           <Routes_ />
         </div>
       </div>
